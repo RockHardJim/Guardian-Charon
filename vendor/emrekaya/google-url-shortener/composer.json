@@ -1,0 +1,41 @@
+{
+    "name": "emrekaya/google-url-shortener",
+    "description": "Google URL Shortener API Package for Laravel 5.6 & Higher",
+    "authors": [
+        {
+            "name": "Emre Kaya",
+            "email": "3emrekaya@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.6"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shortener\\Providers\\ShortenerServiceProvider"
+            ],
+            "aliases": {
+                "Shortener": "Shortener\\Facades\\Shortener"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Shortener\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shortener\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "license": "MIT"
+}

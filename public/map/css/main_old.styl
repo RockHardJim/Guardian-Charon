@@ -1,0 +1,3108 @@
+style-placeholder(color)
+	&::-moz-placeholder
+		color color
+
+	&:-moz-placeholder
+		color color
+
+	&::-webkit-input-placeholder
+		color color
+
+	&:-ms-input-placeholder
+		color color
+		
+custom-scrollbar()
+	::-webkit-scrollbar
+		width 5px
+		height 5px
+
+	::-webkit-scrollbar-track-piece
+		background-color #ccc
+		-webkit-border-radius 3px
+
+	::-webkit-scrollbar-thumb
+		&:horizontal
+			background-color #999
+			-webkit-border-radius 3px
+		&:vertical
+			background-color #999
+			-webkit-border-radius 3px
+
+	::-webkit-scrollbar-button
+		&:horizontal
+			&:increment
+				background-color none
+		&:vertical
+			&:increment
+				background-color none
+
+	::-webkit-scrollbar-button:start:decrement
+	::-webkit-scrollbar-button:end:increment
+		display block
+		height 10px
+		width 10px
+		
+smooth-scrolling(before)
+	-webkit-overflow-scrolling touch
+	if before
+		&:before
+			content ''
+			display inline-block
+			width 0
+			position absolute
+			margin-left -1px
+			height calc(100% + 2px)
+
+custom-scrollbar()
+
+/*============================
+=            base            =
+============================*/
+
+.full-height
+	height 100%
+
+body
+	font-family PT Sans
+
+html
+body
+main
+.sidebar
+	height 100%
+	
+main
+	background url('../img/bg/main-bg.jpg') left center /cover no-repeat
+	overflow hidden
+	position relative
+	
+a
+	color #249def
+	&:hover
+	&:active
+	&:focus
+		color #249def
+	
+.container
+	&--sidebar
+		padding 0
+	
+h3
+	color #090d15
+	font-size 24px
+	margin 0
+	padding 25px 0 14px
+	
+h4
+	color  #44546c
+	font-size 13px
+	font-weight 700
+	text-transform uppercase
+	line-height 28px
+
+textarea
+	background #cbd4e4
+	transition all .3s ease
+	display block
+	width 100%
+	border-radius 3px
+	padding 10px
+	border 1px solid #cbd4e4
+	&:focus
+		background #fff
+		outline none
+		
+.myworld
+	color #090d15
+	text-transform uppercase
+	position absolute
+	border 2px solid #090d15
+	padding 2px 9px
+	font-size 16px
+	font-weight bold
+	top 28px
+	left 28px
+	
+button
+	&:hover
+	&:active
+	&:focus
+		outline none
+	
+/*=====  End of base  ======*/
+
+
+/*============================
+=          colors           =
+============================*/
+
+.text
+	&--red
+		color #f14927
+
+
+/*=====  End of colors  ======*/
+
+	
+/*===============================
+=            sidebar            =
+===============================*/
+	
+.sidebar
+	position relative
+	opacity 0
+	transition opacity .2s ease
+	pointer-events auto
+	z-index 2
+	&.active
+		opacity 1
+	&-column
+		padding 0
+		height 100%
+	&__item
+		height 100%
+		position relative
+		float right
+		overflow auto
+		//pointer-events auto
+		smooth-scrolling(true)
+			
+		
+
+/*=====  End of sidebar  ======*/
+
+
+
+
+/*=================================
+=            places            =
+=================================*/
+
+.places 
+	width 21.95%
+	background-color  #121925
+	color #fff
+	overflow visible
+	&-outer-wrapper
+		padding 25px 22px 0
+		overflow auto
+		height 100%
+	&-wrapper
+		min-height 100%
+		margin-bottom -143px 
+		position relative
+		&:after
+			content ""
+			display block
+			height 142px
+	.input
+		style-placeholder(#2b374b)
+
+.places-toggle
+	position absolute
+	left 5px
+	top 44px
+	transform translateX(-100%)
+	border-radius 3px 0 0 3px
+	background #121925
+	border none
+	color #249def
+	padding 6px 8px
+	&:focus
+	&:active
+	&:hover
+		outline none
+	&-wrapper
+		position absolute
+		height 100%
+		width 7px
+		z-index 1
+		left -7px
+		transition all .3s ease
+		transform translateX(7px)
+		background #121925
+		&.active
+			transform translateX(0)
+	
+	
+.places-block
+	margin-bottom 31px
+	&__title
+		margin-bottom 2px
+	&__btn
+		margin-top 20px
+		width 100%
+	&--bottom
+		position absolute
+		bottom 0
+		left -22px
+		right -22px
+		padding 22px
+		background #0f151f
+		margin-bottom 0
+	p
+		margin 0
+	
+.places-header
+	line-height 41px
+	margin-bottom 35px
+	&__label
+		border 2px solid #fff
+		font-size 13px
+		font-weight 700
+		text-transform uppercase
+		display inline-block
+		vertical-align middle
+		line-height 1
+		padding 7px 12px
+		letter-spacing 1px
+
+
+.striped-list
+	padding 0
+	margin 0 -22px
+				
+.striped-list-item
+	list-style-type none
+	padding 12px 0 11px 23px
+	transition all .3s ease
+	a
+		color #fff
+		&:hover
+		&:focus
+		&:active
+			color #fff
+	&__index
+		font-family Roboto
+		color  #fff
+		font-size 10px
+		font-weight 700
+		border-radius 2px
+		background-color rgba(9, 13, 21, 0.7)
+		transition all .3s ease
+		width 21px
+		height 20px
+		line-height 20px
+		text-align center
+		display inline-block
+		vertical-align middle
+		margin-right 7px
+	&__flag
+		display inline-block
+		vertical-align middle
+		margin-right 9px
+	&__name
+		display inline-block
+		vertical-align middle
+	&:nth-of-type(odd)
+		background-color #0f151f
+	&:hover
+		.striped-list-item__index
+			background-color #F04A31
+			
+[data-overview-toggle]
+	cursor pointer
+			
+
+/*=====  End of places  ======*/
+
+/*============================
+=            menu            =
+============================*/
+
+.menu-toggle
+	background-color transparent
+	width 41px
+	height 41px
+	float right
+	color #fff
+	border none
+	padding 0
+	text-align center
+	line-height 41px
+	color #249def
+	transition all .3s ease
+	margin-right -22px
+	&:focus
+	&:active
+		outline none
+	&:hover
+		opacity .7
+	&--close
+		background-color #090d15
+	&--overview
+		font-size 24px
+		width 20px
+		height auto
+		background none
+		float left
+		line-height 1
+	
+nav.menu
+	width 16.26%
+	background #090d15
+	padding 25px 15px
+	transition all .3s ease
+	transform translateX(0)
+	opacity 1
+	&--hidden
+		opacity 0
+		transform translateX(100%)
+	
+.menu-item
+	display block
+	padding 13.3px 15px
+	margin 0 -15px
+	font-weight 700
+	font-size 13px
+	text-transform uppercase
+	transition all .3s ease
+	position relative
+	color #fff
+	&:hover
+	&:active
+	&:focus
+		color #fff
+		text-decoration none
+		outline none
+	&:hover
+	&.active
+		background #0e1420
+	&:hover
+		.menu-item__icon
+			path
+				fill #F04A32 !important
+				
+	&__icon
+		display inline-block
+		vertical-align middle
+		margin-right 6px
+		width 16px
+		height 16px
+		text-align center
+		path
+			transition all .3s ease
+			fill #1C242F !important
+	&__title
+		display inline-block
+		vertical-align middle
+		letter-spacing 1px
+	&__indicator
+		position absolute
+		right 23px
+		top 50%
+		margin-top -11px
+
+/*=====  End of menu  ======*/
+
+/*====================================
+=            overview            =
+====================================*/
+
+.overview
+	width 48.78%
+	padding 19px 30px 0 30px
+	background #eff3fa
+	z-index 3
+	position relative
+	&__header
+		background #fff
+		padding 19px 27px 28px
+	&-heading
+		padding 21px 0
+		//line-height 35px
+		position relative
+		&--container
+			padding 0
+			height 0
+		h3
+			display inline-block
+			line-height inherit
+			padding 0
+		&__btns
+			float right
+			button
+				margin-right 20px
+	&-block
+		padding-right 30px
+		padding-left 30px
+		background-color #fff
+		margin-left -30px
+		margin-right -30px
+		&--fluid
+			padding-left 0
+			padding-right 0
+		&--gray
+			background #fafbfe
+			border-bottom 1px solid #e0e4f0
+		
+
+.overview-header
+	margin-top -19px
+	padding-top 0
+	&-wrapper
+		position relative
+		padding 20px 0 15px
+	&__title
+		color #090d15
+		font-size 30px
+		font-weight 700
+		text-transform uppercase
+		margin -5px 0 0 0
+	
+.menu-toggle--overview
+	&+.overview-header__title
+		margin-left 40px
+
+/*=====  End of overview  ======*/	
+
+/*=============================
+=            news            =
+=============================*/
+
+.news-view
+	background url('../img/news/1.jpg') center center /cover no-repeat
+	height 230px
+	position relative
+	&-datetime-wrapper
+		position absolute
+		top 30px
+		left 30px
+	&__datetime
+		background #f5f8fd
+		border-radius 3px
+		font-family Roboto
+		font-size 11px
+		color #0f151f
+		display inline-block
+		padding 0 7px
+		line-height 26px
+		margin-right 18px
+		box-shadow 0px 0px 2px 0px rgba(0, 0, 0, 1)
+		.fa
+			color #cbcedd
+			margin-right 9px
+			
+.news-content
+	padding-top 30px
+	padding-bottom 30px
+	line-height 1.571
+	color #7485a2
+	font-family Roboto
+	font-weight 300
+	&__img
+		width 100%
+		margin 40px 0 20px
+	h2
+		font-weight 500
+		font-size 18px
+		color #0f151f
+	&__ol
+		padding 0
+		list-style-type none
+		li
+			counter-increment step-counter
+			margin-bottom 5px
+			&:before
+				font-family Roboto
+				font-weight 900
+				color #249def
+				content counter(step-counter)
+				margin-right 10px
+				
+.news-author
+	font-size 12px
+	color #878d9e
+	border-top 1px solid #ecf1fb
+	padding-top 18px 
+	padding-bottom 21px
+	p
+		margin-bottom 0
+	&__name
+		text-transform uppercase
+		font-family 'PT Sans'
+		font-weight bold
+		font-size 13px
+		margin-bottom 8px
+	&__wrap
+		display inline-block
+		vertical-align middle
+	&__img
+		display inline-block
+		vertical-align middle
+		border-radius 3px
+		margin-right 8px
+	&__tags
+		line-height 36px
+	
+
+/*=====  End of news  ======*/
+
+
+/*=============================
+=         place-view          =
+=============================*/
+.place-view
+	position relative
+	height 186px
+	//background url('../img/countries/russia.jpg')
+	// &__bg
+	// 	width 100%
+	&__buttons
+		position absolute
+		bottom 29px
+		left 30px
+		.btn
+			margin-right 24px
+			&:last-of-type
+				margin-right 0
+	&--slider
+		height 207px
+		overflow hidden
+		background #e0e4f0
+	&-thumbs
+		position absolute
+		bottom 15px
+		right 30px
+		z-index 1
+		&__item
+			width 43px
+			height 43px
+			border 3px solid #fff
+			border-radius 3px
+			overflow hidden
+			margin-right 10px
+			display inline-block
+			vertical-align middle
+			cursor pointer
+			box-shadow 0px 0px 2px 0px rgba(0, 0, 0, 0.4)
+			background #e0e4f0
+			&:last-of-type
+				margin-right 0
+	&-imgs
+		&__item
+			position absolute
+			top 50%
+			left 50%
+			width 100%
+			opacity 0
+			transition all .6s ease
+			transform translate3d(-50%, -50%, 0)
+			&.active
+				opacity 1
+			
+
+/*=====  End of place-view  ======*/
+
+/*=============================
+=         place-menu          =
+=============================*/
+	.place-menu
+		margin-bottom 0
+		background #121925
+		list-style-type none
+		&__item
+			font-weight 700
+			display inline-block
+			vertical-align top
+			font-size 13px
+			text-transform uppercase
+			margin-right 21px
+			a
+				color #fff
+				line-height 43px
+				display inline-block
+			&:last-of-type
+				margin-right 0
+		&--fixed
+			position fixed
+			top 0
+			right 35px
+			width 100%
+			z-index 3
+			display none
+			&.active
+				display block
+				
+
+
+/*=====  End of place-menu  ======*/
+
+.place-lists
+	line-height 1.571
+	font-weight 300
+	color #7485a2
+	padding 25px 0
+	h4
+		margin-bottom 0
+	
+
+.bullets-list
+	margin-bottom 35px
+	list-style-type none
+	padding 0
+	&__item
+		&:before
+			content '- '
+			display inline
+			
+.price
+	font-family Roboto
+	font-weight 100
+	color #529624
+	font-size 22px
+	text-align right
+	margin-bottom 15px
+	&--inactive
+		color #000
+		
+.place-right-block
+	float right
+	margin-top -10px
+	background #fff
+	padding 0 97px 17px 18px
+	&__item
+		margin-bottom 25px
+		
+.selections
+	margin-top 15px
+	&__item
+		display inline-block
+		margin-right 15px
+
+/*=============================
+=         circle-stat        =
+=============================*/
+
+.circle-stat
+	padding 20px 0 10px
+	text-align center
+	color #878d9e
+	transition all .3s ease
+	&--tall
+		padding-top 53px
+	&-icon-wrap
+		width 54px
+		height 54px
+		border-radius 50%
+		border 2px solid #cbcedd
+		display inline-block
+		position relative
+		transition all .3s ease
+	&__value
+		font-size 12px
+		margin 10px 0 0
+	&__icon
+		display inline-block
+		position absolute
+		top 50%
+		left 50%
+		width 16px
+		transform translate(-50%, -50%)
+		transition all .3s ease
+		color #cbcedd
+		font-size 17px
+		&.fa
+			width auto
+		path
+		polygon
+			transition all .3s ease
+			fill #cbcedd !important
+			filter none
+	&-wrap
+		border 1px solid #e0e4f0
+		border-width 0 1px 1px 0
+		&:hover
+			color #f34927
+			.circle-stat-icon-wrap
+				border-color #f34927
+			.circle-stat__icon
+				color #f34927
+				path
+				polygon
+					fill #f34927 !important
+		&--pink
+			color #f3279f
+			.circle-stat-icon-wrap
+				border-color #f3279f
+			.circle-stat__icon
+				color #f3279f
+				path
+				polygon
+					fill #f3279f !important
+			&:hover
+				.circle-stat-icon-wrap
+					background #f3279f
+					border-color #f3279f
+				.circle-stat__icon
+					color #fff
+					path
+					polygon
+						fill #fff !important
+				
+
+
+
+/*=====  End of circle-stat  ======*/
+
+/*=============================
+=          grid-item         =
+=============================*/
+
+.grid
+	position relative
+
+.grid-container
+	border-top 1px solid #e0e4f0
+
+.grid-item
+	padding 30px
+	background #fff
+	cursor pointer
+	transition all .3s ease
+	border-bottom 1px solid #e0e4f0
+	&-img-wrapper
+		position relative
+		float left
+		.grid-item__img
+			float none
+	&__img
+		float left
+	&__pin
+		position absolute
+		border 3px solid #fff
+		border-radius 50%
+		right -11px
+		bottom -3px
+	&__title
+		font-size 13px
+		font-weight 700
+		line-height 1
+		text-transform uppercase
+		transition all .3s ease
+		display inline-block
+		&--fire
+			&:after
+				content ''
+				display inline-block
+				vertical-align bottom
+				margin-left 7px
+				width 13px
+				height 16px
+				background url('../img/icons/fire.png')
+			
+	&__desc
+		margin-bottom 10px
+		color #7485a2
+		font-family Roboto
+		font-weight 300
+		line-height 1.571
+	&__date
+		position absolute
+		bottom 30px
+		font-family Roboto
+		font-weight 100
+		font-size 11px
+		color #7485a2
+	
+	&__date-right
+		font-family Roboto
+		color #7485a2
+		margin-bottom 0
+		font-size 13px
+		text-align right
+		span
+		img
+			display inline-block
+			vertical-align middle
+		img
+			margin-right 7px
+	&--friend
+		&:after
+			content 'Friend'
+			display inline-block
+			position absolute
+			top 10px
+			right 10px
+			color #fff
+			background #9acc13
+			border-radius 10px
+			font-family Roboto
+			font-weight 300
+			font-size 11px
+			padding 1px 8px
+	&--card
+		text-align center
+		padding 27px 0
+		border-right 1px solid #e0e4f0
+		.grid-item__img
+			float none
+			display block
+			margin 0 auto
+			border-radius 50%
+			margin-bottom 20px
+	&--post
+		position relative
+		padding 30px
+		height 202px
+	&--single
+		padding-top 0
+	&--big
+		.grid-item
+			&-wrapper
+				margin-left 100px
+				margin-top 0
+				line-height 1
+			&__title
+				margin-bottom 5px
+			&__desc
+				padding-right 140px
+				
+			
+	&-wrapper
+		border-bottom none
+		margin 7px 0 0 71px
+	&:nth-of-type(odd)
+		border-right 1px solid #e0e4f0
+	&:hover
+		background #F6F8FE
+		.grid-item__title
+			color #121924 !important
+			
+			
+
+
+/*=====  End of grid-item  ======*/
+
+/*=============================
+=          excursion          =
+=============================*/
+
+.excursion
+	height 157px
+	background-size cover
+	background-position center center
+	background-repeat no-repeat
+	position relative
+	font-size 13px
+	cursor initial
+	margin 20px 0 -31px
+	color #fff
+	&__info
+		position absolute
+		bottom 0
+		left 0
+		width 100%
+		padding 13px 30px
+		background rgba(0, 0, 0, .76)
+	&--single
+		margin-top 0
+	&-info-block
+		display inline-block
+		vertical-align top 
+		margin-right 40px
+		p
+			margin 0
+		&__img
+			display inline-block
+			vertical-align middle
+			margin-right 8px
+			border-radius 3px
+		&__title
+			font-weight 700
+			margin-bottom 0
+			text-transform uppercase
+		&-wrap
+			display inline-block
+			vertical-align middle
+
+
+/*=====  End of excursion  ======*/
+
+/*=============================
+=            tags             =
+=============================*/
+
+.tags
+	display inline-block
+	vertical-align middle
+	margin-right 18px
+	&__item
+		font-family Roboto
+		font-weight 300
+		font-size 11px
+		color #838a96
+		padding 0 8px
+		line-height 16px
+		margin-right 8px
+		background #dfe4ee
+		border-radius 10px
+		display inline-block
+		vertical-align middle
+		&:last-of-type
+			margin-right 0
+			
+
+
+/*=====  End of tags  ======*/
+
+/*=============================
+=         breadcrumb          =
+=============================*/
+
+.breadcrumb
+	background none
+	padding 0
+	margin 0
+	.active
+		color #1c272d
+	&>li+li:before
+		color #bed0da
+		padding 0 2px 0 0
+
+
+/*=====  End of breadcrumb  ======*/
+
+/*=============================
+=            stars            =
+=============================*/
+.star
+	color #ffa200
+	transition all .3s ease
+	&--empty
+		color #cbcedd
+	&--input
+		float right
+		padding-right 5px
+		&:hover
+		&:hover ~ .star--input
+			color #ffa200
+.rating-input:checked ~ .star--input
+	color #ffa200
+
+
+
+
+/*=====  End of stars  ======*/
+
+/*=============================
+=        contact-item        =
+=============================*/
+
+.contact-item
+	img
+		margin-right 8px
+	img
+	a
+		display inline-block
+		vertical-align middle
+	&-wrapper
+		display inline-block
+		vertical-align middle
+
+/*=====  End of contact-item  ======*/
+
+/*=============================
+=      place-description     =
+=============================*/
+
+.place-description
+	font-family Roboto
+	font-weight 300
+	color #7485a2
+	line-height 1.571
+	padding-top 20px
+	padding-bottom 25px
+	box-shadow 0px 1px 3px 0px rgba(174, 189, 215, 0.22)
+	&-contact
+		margin-bottom 45px
+		&__item
+			display inline-block
+			vertical-align middle
+			margin-right 20px
+			&--phone
+				a
+					color #7485a2
+					&:hover
+					&:active
+					&:focus
+						color #7485a2
+			&--website
+				a
+					color #f14927
+					&:hover
+					&:active
+					&:focus
+						color #f14927
+			
+			&:last-of-type
+				margin-right 0	
+	&-info
+		margin-top 25px
+		&-table
+			display table
+			width 100%
+			p
+				margin 0
+			&__cell
+				display table-cell
+				&--key
+					font-weight 400
+					float left
+				&--dots
+					width 100%
+					position relative
+					border 10px solid #fff
+					border-width 0 10px 0 10px
+					span
+						height 1px
+						display block
+						background linear-gradient(45deg,#cbd7df,transparent 1px)
+						background-size 4px
+						width 100%
+						top 50%
+						position absolute
+						margin-top -.5px
+				&--value
+					float right
+					white-space nowrap
+			&__row
+				display table-row
+				
+
+
+/*=====  End of place-description  ======*/
+
+/*=============================
+=          instagram          =
+=============================*/
+
+.instagram
+	padding-top 30px
+	padding-bottom 30px
+	border-top 1px solid #e0e4f0
+	&__item
+		width 120px
+		height 100px
+		padding-right 20px
+		float left
+		text-align center
+		border-radius 3px
+		overflow hidden
+		img
+			width 100%
+		&--icon
+			width 50px
+			position relative
+			padding 0
+			img
+				position absolute
+				top 50%
+				left 50%
+				width 24px
+				height 24px
+				margin-top -12px
+				margin-left -12px
+	&:last-of-type
+		padding-right 0
+
+
+/*=====  End of instagram  ======*/
+
+
+/*=============================
+=            review            =
+=============================*/
+.review
+	margin-bottom 40px
+	&-header
+		margin-bottom 20px
+		&__img
+			border-radius 50%
+			margin-right 30px
+			display inline-block
+			vertical-align middle
+		&__info
+		&__rating
+			display inline-block
+			vertical-align top
+		&__info
+			margin-right 32px
+	&__name
+		font-weight bold
+		font-size 13px
+		color #249def
+		text-transform uppercase
+		margin 0
+	&__date
+		font-size 12px
+		margin 0
+		color #878d9e
+	&-header-wrap
+		display inline-block
+		vertical-align middle
+	&__content
+		font-family Roboto
+		font-weight 300
+		line-height 1.571
+		padding 20px
+		background #fff
+		color #7485a2
+		border 1px solid #e0e4f0
+		border-radius 3px
+		position relative
+		&:after
+		&:before
+			bottom 100%
+			left 32px
+			border solid transparent
+			content " "
+			height 0
+			width 0
+			position absolute
+			pointer-events none
+		&:before
+			border-color rgba(224, 228, 240, 0)
+			border-bottom-color #e0e4f0
+			border-width 5px
+			margin-left -5px
+		&:after
+			border-color rgba(255, 255, 255, 0)
+			border-bottom-color #fff
+			border-width 4px
+			margin-left -4px
+
+
+
+/*=====  End of review  ======*/
+
+
+/*=============================
+=         btns-block         =
+=============================*/
+
+	
+.btns-block
+	padding 30px 22px 34px 30px
+	background #fff
+	border-bottom 1px solid #e0e4f0
+	&__search-form
+		margin-left 230px
+	.btn
+		margin-right 28px
+			
+		
+
+/*=====  End of btns-block  ======*/
+
+/*=============================
+=            add-review       =
+=============================*/
+
+.add-review
+	&__rating
+		font-size 16px
+		display inline-block
+		margin-right 20px
+		vertical-align middle
+	&__textarea
+		margin-bottom 20px
+	&:last-child
+		margin-bottom 50px
+		
+.rating-input
+	display none
+	
+label.star
+	color #cbcedd
+
+
+/*=====  End of add-review  ======*/
+
+/*=============================
+=          user-view          =
+=============================*/
+
+.user-view
+	height 169px
+	position relative
+	background url('../img/bg/user.jpg') center center /cover no-repeat
+	&:after
+		position absolute
+		content ''
+		display block
+		top 0
+		right 0
+		bottom 0
+		left 0
+		background #051434
+		opacity .7
+	&__info
+		position absolute
+		left 30px
+		bottom -30px
+		z-index 1
+		color #fff
+		pointer-events none
+	&-info
+		font-size 13px
+		&__img
+			display inline-block
+			vertical-align top
+			border 3px solid #fff
+			border-radius 3px
+			margin-right 18px
+			box-shadow 0px 0px 2px 0px rgba(0, 0, 0, 0.41)
+			pointer-events auto
+		&-wrapper
+			display inline-block
+			vertical-align top
+			margin-top 10px
+		.fa
+			font-size 18px
+		.btn
+			margin-right 15px
+			pointer-events auto
+		p
+			margin-bottom 15px
+			pointer-events auto
+			text-transform uppercase
+
+
+
+/*=====  End of user-view  ======*/
+
+/*=============================
+=         countdown          =
+=============================*/
+.countdown-flip
+	background url('../img/bg/countdown-flip.png')
+	width 62px
+	height 66px
+	line-height 60px
+	text-align center
+	font-family Roboto
+	font-weight 300
+	font-size 36px
+	display inline-block
+	margin-right 5px
+	position relative
+	&:last-of-type
+		margin-right 0
+	&:after
+		text-transform uppercase
+		position absolute
+		left 0
+		width 100%
+		top 100%
+		margin-top 6px
+		text-align center
+		font-weight bold
+		font-size 10px
+		line-height 1
+	&--days
+		&:after
+			content 'days'
+	&--hours
+		&:after
+			content 'hours'
+	&--minutes
+		&:after
+			content 'minutes'
+
+/*=====  End of countdown  ======*/
+
+/*=============================
+=         event-view          =
+=============================*/
+
+.event-view
+	background url('../img/bg/event.jpg') left center /cover no-repeat
+	&__info
+		background #d8dfed
+		color #5b729f
+		padding 5px 60px 5px 23px
+		margin 0 -15px
+		.fa
+			font-size 13px
+		.price 
+			margin 0 18px 0 0
+			display inline-block
+			vertical-align middle
+		.btn
+			display inline-block
+			vertical-align middle
+	&-info
+		&__countdown
+			margin-bottom 30px
+		&__bottom
+			margin-top 20px
+	p
+		font-weight bold
+		font-size 11px
+		text-transform uppercase
+
+
+/*=====  End of event-view  ======*/
+
+
+/*=============================
+=            chat             =
+=============================*/
+
+.chat
+	position relative
+	padding 23px 30px 0
+	&__header
+		margin 0 -30px
+		padding 0 30px 24px
+		font-size 30px
+		line-height 1
+		text-transform uppercase
+		border-bottom 1px solid #e0e4f0
+		p
+			margin 0
+	.close-modal
+		top 10px !important
+		
+.chat-window
+	position absolute
+	top 0
+	left 0
+	right 0
+	opacity 0
+	visibility hidden
+	transition opacity .3s ease, visibility 0s .3s ease
+	&.active
+		opacity 1
+		visibility visible
+		transition opacity .3s ease, visibility 0s ease
+		
+.chat-title
+	margin-left 30px
+		
+.chat-contacts
+	margin-left -30px
+	margin-right -30px
+	overflow-y scroll
+	position relative
+	
+.chat-contact
+	font-size 12px
+	padding 13px 25px 13px 30px
+	color #878d9e
+	cursor pointer
+	border-bottom 1px solid #e0e4f0
+	transition all .3s ease
+	&.active
+	&:hover
+		background #eff3fa
+	p
+		margin-bottom 0
+	&__img
+		float left
+		width 36px
+		border-radius 3px
+	&-wrap
+		margin-left 50px
+	&__name
+		font-weight bold
+		font-size 13px
+		text-transform uppercase
+		position relative
+		&--online
+			span
+				display inline-block
+				vertical-align middle
+			&:after
+				content ''
+				width 5px
+				height 5px
+				border-radius 50%
+				background #7ad815
+				margin-left 5px
+				display inline-block
+				vertical-align middle
+	&__messages-count
+		float right
+		font-size 12px
+		&--unread
+			position relative
+			&:after
+				content ''
+				width 8px
+				height 8px
+				border 2px solid #fff
+				border-radius 50%
+				background #ff2a00
+				position absolute
+				top 0
+				right -5px
+		.fa
+			margin-right 6px
+			
+			
+	
+.chat-messages
+	padding-left 30px
+	padding-right 30px
+	margin-right -15px
+	padding-top 25px
+	overflow-y scroll
+	background #eff3fa
+	border-left 1px solid #e0e4f0
+	
+	
+.chat-message
+	font-family Roboto
+	font-weight 300
+	color #7485a2
+	padding-bottom 30px
+	&__avatar
+		width 44px
+		border-radius 50%
+	&__text
+		background #fff
+		position relative
+		padding 20px 22px 15px
+		border 1px solid #e0e4f0
+		border-radius 3px
+	&--outcoming
+		float right
+		.chat-message
+			&__text
+				text-align left
+				padding-right 65px
+				margin-right 60px
+				&:after
+				&:before
+					left 100%
+					top 23px
+					border solid transparent
+					content " "
+					height 0
+					width 0
+					position absolute
+					pointer-events none
+				&:before
+					border-color rgba(224, 228, 240, 0)
+					border-left-color #e0e4f0
+					border-width 5px
+					margin-top -5px
+				&:after
+					border-color rgba(255, 255, 255, 0)
+					border-left-color #fff
+					border-width 4px
+					margin-top -4px
+			&__avatar
+				float right
+			&__time
+				text-align left
+				&:before
+					left 0
+			
+	&--incoming
+		float left
+		.chat-message
+			&__text
+				text-align right
+				margin-left 60px
+				&:after
+				&:before
+					right 100%
+					top 23px
+					border solid transparent
+					content " "
+					height 0
+					width 0
+					position absolute
+					pointer-events none
+				&:before
+					border-color rgba(224, 228, 240, 0)
+					border-right-color #e0e4f0
+					border-width 5px
+					margin-top -5px
+				&:after
+					border-color rgba(255, 255, 255, 0)
+					border-right-color #fff
+					border-width 4px
+					margin-top -4px
+			&__avatar
+				float left
+			&__time
+				text-align right
+				&:before
+					right 0
+	&__time
+		color #abb8c4
+		margin-top 20px
+		position relative
+		&:before
+			content ''
+			display block
+			height 1px
+			position absolute
+			width 30px
+			background #abb8c4
+			top -10px
+			
+.chat-input
+	background #dfe5f0
+	clear both
+	padding 27px 30px
+	margin-right -15px
+	&__submit
+		float right
+		line-height 1 !important
+		.fa
+			font-size 18px
+	&__textarea
+		background #fff
+		border none
+		border-radius 3px
+		color #7485a2
+		font-family Roboto
+		font-weight 300
+		resize none
+	&-textarea-wrapper
+		margin-right 70px
+		
+
+
+/*=====  End of chat  ======*/
+
+
+
+/*=============================
+=         filter-window       =
+=============================*/
+
+.filter-window
+	position absolute
+	top 100%
+	left -30px
+	right -30px
+	padding 30px
+	z-index 1
+	background #eff3fa
+	transform translateY(-10%)
+	transition opacity .3s ease, transform .3s ease, visibility 0s .3s
+	opacity 0
+	visibility hidden
+	line-height 1.42857143
+	box-shadow 0 60px 120px 0px rgba(87,100,124,0.6)
+	.btn[type=submit]
+		padding 0 37px
+	&.active
+		opacity 1
+		visibility visible
+		transform translateY(0)
+		transition opacity .3s ease, transform .3s ease, visibility 0s
+	
+.filter
+	&-row
+		margin 0 -30px 35px -30px
+		&:last-of-type
+			margin-bottom 50px
+	&__title
+		color #6e7487
+		text-transform uppercase
+		font-weight 700
+		font-size 13px
+	&__label
+		font-family Roboto
+		font-weight 300
+		font-size 12px
+		color #7b89a1
+		margin 0 12px 0 0
+		&:last-of-type
+			margin-right 0
+		span
+			display inline-block
+			vertical-align middle
+		.box
+			width 15px
+			height 15px
+			background #cbd4e4
+			border-radius 3px
+			margin-right 7px
+			cursor pointer
+			&:after
+				content ''
+				display block
+				width 9px
+				height 9px
+				margin 3px 0 0 3px
+				opacity 0
+				transition all .2s ease
+				background #fff
+		input
+			display none
+			&:checked
+				+ .box
+					&:after
+						opacity 1
+						
+
+/*=====  End of filter-window  ======*/
+
+/*=============================
+=            booking          =
+=============================*/
+
+.booking
+	background #0f151f
+	padding-top 20px
+	padding-bottom 30px
+	color #fff
+	&__title
+		font-size 24px
+	&__list
+		list-style-type none
+		padding 0
+		margin-bottom 20px
+	&-list
+		color #414b5d
+		&__item
+			display inline-block
+			vertical-align middle
+			margin-right 20px
+			&:last-of-type
+				margin-right 0
+			.fa
+				margin-right 5px
+
+
+/*=====  End of booking  ======*/
+
+
+/*=============================
+=         newsletter         =
+=============================*/
+.newsletter
+	background url('../img/icons/envelope.png') right center no-repeat, #0f151f
+	padding-top 20px
+	padding-bottom 35px
+	&__title
+		font-size 24px
+		color #fff
+	&__desc
+		font-family Roboto
+		font-weight 500
+		color #44546e
+		margin-bottom 20px
+	&__form
+		input
+			width 257px
+			color #fff
+			line-height 35px
+			height 35px
+			background #2b3443
+			border none
+			border-radius 3px
+			font-family 13px
+			font-weight bold
+			padding 0 10px
+			margin-right 18px
+			style-placeholder(#fff)
+		[type=submit]
+			height 35px
+			line-height 35px
+
+
+/*=====  End of newsletter  ======*/
+
+
+/*=============================
+=            sharing          =
+=============================*/
+
+.share
+	padding-top 30px
+	padding-bottom 34px
+	font-size 18px
+	background url('../img/bg/share.jpg') center center /cover no-repeat
+	color #fff
+	&__title
+		font-size 24px
+
+.share-social-list
+	padding 0
+	margin 20px 0 0 0
+	&__item
+		display inline-block
+		vertical-align middle
+		margin-right 10px
+		img
+			border-radius 3px
+		&:last-of-type
+			margin-right 0
+			
+.coupon
+	background rgba(0, 0, 0, .31)
+	text-align center
+	font-size 30px
+	border-radius 3px
+	border 1px dashed #898383
+	.asterisks
+		position relative
+		top 7px
+	
+
+
+/*=====  End of sharing  ======*/
+
+/*=============================
+=           select          =
+=============================*/
+
+.selection
+.select2-selection
+	&:focus
+		outline none
+		
+.select2-container
+	display inline-block
+	padding 0
+	width auto !important
+	&--dark
+		.select2-selection
+			text-transform uppercase
+			font-size 13px
+			font-weight 700
+			border-radius 3px
+			color #fff
+			background #090d15
+			height 35px
+			line-height 35px
+			position relative
+			padding 0 20px
+			overflow hidden
+			&__rendered
+				display inline-block !important
+				vertical-align top !important
+				padding 0 !important
+			&__arrow
+				display inline-block !important
+				vertical-align top !important
+				margin-left 16px
+				&:after
+					content '\f107'
+					color #f34927
+					font-size 18px
+					font-family 'FontAwesome'
+					display inline-block
+			&__choice
+				display inline-block
+		.select2-dropdown
+			border 2px solid #090d15
+			font-family Roboto
+			font-weight 300
+			font-size 12px
+			color #7b89a1
+			border-radius 0
+		.select2-results
+			&__option
+				padding 8px 16px
+				border-bottom 1px solid #e0e4f0
+				&:last-of-type
+					border-bottom none
+	&--gray
+		width 100%
+		display block
+		.select2-search
+			&__field
+				background transparent
+				border none
+				margin 0 !important
+				&:focus
+					outline none
+		.select2-selection
+			text-transform uppercase
+			font-size 13px
+			font-weight 700
+			border-radius 3px
+			color #7f8fab
+			background #cbd4e4
+			height 35px
+			line-height 35px
+			position relative
+			padding 0 20px
+			overflow hidden
+			&__rendered
+				display inline-block !important
+				vertical-align top !important
+				padding 0 !important
+				margin 0
+				height 100%
+				list-style-type none
+			&__arrow
+				display inline-block !important
+				vertical-align top !important
+				margin-left 16px
+				background #c0cbdf
+				position absolute
+				right 0
+				top 0
+				padding 0 10px
+				&:after
+					content '\f107'
+					color #fff
+					font-size 18px
+					font-family 'FontAwesome'
+					display inline-block
+			&--multiple
+				.select2-selection__rendered
+					.select2-search
+						&:after
+							content 'KEYWORDS'
+							font-family 'PT Sans'
+							font-weight 700
+							font-size 13px
+							color #7f8fab
+							opacity 0
+							margin-left -.75em
+							// position absolute
+							// left 0
+							// top 0
+							pointer-events none
+							transition all .2s ease
+					.select2-search:first-of-type:last-of-type
+						position relative
+						&:after
+							opacity 1
+				&[aria-expanded=true]
+					.select2-selection__rendered
+						.select2-search
+							&:after
+								opacity 0 !important
+			&__choice
+				float left
+				margin-right 10px
+				padding-left 15px
+				position relative
+				&__remove
+					font-size 18px
+					position absolute
+					left 0
+					bottom 1px
+		.select2-dropdown
+			border 2px solid #cbd4e4
+			font-family Roboto
+			font-weight 300
+			font-size 12px
+			color #7b89a1
+			border-radius 0
+		.select2-results
+			&__option
+				padding 8px 16px
+				border-bottom 1px solid #e0e4f0
+				&:last-of-type
+					border-bottom none
+		
+		
+
+
+/*=====  End of select  ======*/
+
+
+/*=============================
+=            noUi            =
+=============================*/
+
+.noUi-horizontal
+	&.noUi-extended
+		padding-right 16px
+		.noUi-handle
+			left -1px
+		.noUi-origin
+			right -16px
+
+
+.noUi-connect
+	background #f34927
+	
+	
+.noUi-horizontal
+	height 4px
+	cursor pointer
+	.noUi-handle
+		border-radius 50%
+		background-color  #f34927
+		width 16px
+		height 16px
+		border 5px solid #090d15
+		box-shadow none
+		left -8px
+		top -6px
+		cursor pointer
+		&:before
+		&:after
+			display none
+	.noUi-handle
+		.noUi-tooltip
+			border none
+			border-radius 0
+			background none
+			padding 0
+			font-family Roboto
+			font-weight 300
+			font-size 12px
+			white-space nowrap
+			color #7b89a1
+			top 15px
+			left -3px
+			
+.noUi-target
+.noUi-background
+	border-radius 4px
+	border none
+	background #cbd4e4
+	box-shadow none
+	
+
+
+/*=====  End of noUi  ======*/
+
+/*====================================
+=            social stats            =
+====================================*/
+				
+.social-stats
+	display inline-block
+	vertical-align middle
+	&__item
+		display inline-block
+		vertical-align middle
+		font-size 12px
+		color #878d9e
+		margin-right 14px
+	
+.social-stats-item
+	&__icon
+		margin-right 7px
+		color #cbcedd
+
+/*=====  End of social stats  ======*/
+
+/*================================
+=            collapse            =
+================================*/
+
+
+.collapse-header
+	background-color #249def
+	height 51px
+	line-height 51px
+	color #fff
+	font-size 13px
+	text-transform uppercase
+	font-weight 700
+	padding 0 22px 0 30px
+	position relative
+	transition all .3s ease
+	cursor pointer
+	&:hover
+		opacity .7
+	&__arrow
+		position absolute
+		background transparent
+		border none
+		right 16px
+		top 50%
+		margin-top -9px
+		font-size 18px
+		transition all .3s ease
+	&__img
+		margin-right 15px
+	&--wiki
+		background url('../img/bg/wiki-bg.jpg') left center no-repeat, #249def
+	&[aria-expanded=true]
+		.collapse-header__arrow
+			transform rotate(180deg)
+	p
+		margin-bottom 0
+			
+
+.collapse-content
+	&-wrapper
+		padding 30px
+		background #fff
+
+/*=====  End of collapse  ======*/
+
+
+
+/*=============================
+=         country-info          =
+=============================*/
+
+.country-info
+	margin-bottom 15px
+	&__img
+		width 100%
+		margin-bottom 15px
+	&__title
+		margin-bottom 20px
+		p
+			line-height 20px
+			font-size 24px
+			display inline-block
+	&-title
+		&__img
+			line-height 20px
+			float right
+			
+.country-info-table
+	display table
+	font-size 13px
+	width 100%
+	color #44546c
+	margin-bottom 7px
+	&__row
+		display table-row
+	&__cell
+		display table-cell
+		&--key
+			font-weight bold
+			text-transform uppercase
+			float left
+		&--dots
+			width 100%
+			border 10px solid #121925
+			border-width 0 10px 0 10px
+			position relative
+			span
+				height 1px
+				display block
+				background linear-gradient(45deg, #3a4e59 0px, transparent 1px)
+				background-size 4px
+				width 100%
+				top 50%
+				position absolute
+				margin-top -0.5px
+		&--value
+			color #fff
+			text-align right
+			float right
+			white-space nowrap
+
+
+/*=====  End of country-info  ======*/
+
+
+/*=============================
+=            forms            =
+=============================*/
+
+.input
+	border none
+	font-size 14px
+	font-weight 400
+	padding-right 20px
+	display block
+	width 100%
+	height 35px
+	line-height 35px
+	&:focus
+	&:active
+		outline none
+	&--transparent
+		background transparent
+	&--blue
+		border-bottom 1px solid #249def
+		style-placeholder(#878d9e)
+
+.search-form
+	position relative
+	//margin-top 8px
+	&__icon
+		color #cbcedd
+		background transparent
+		border none
+		position absolute
+		right -4px
+		top 12px
+		&--dark
+			color #2b374b
+		&:focus
+		&:active
+			outline none
+
+/*=====  End of forms  ======*/
+		
+		
+/*===============================
+=            buttons            =
+===============================*/
+
+
+.btn
+	border-radius 3px
+	display inline-block
+	text-transform uppercase
+	font-size 13px
+	font-weight 700
+	opacity 1
+	border-width 0
+	position relative
+	color #fff
+	transition all .3s ease
+	padding 0 17px
+	letter-spacing 1px
+	height 43px
+	overflow hidden
+	line-height 43px
+	&:hover
+	&:active
+	&:focus
+		color #fff
+		outline none !important
+	&:hover
+		opacity .7
+	&__text
+		display inline-block
+		vertical-align middle
+	&--contour-blue
+		background transparent
+		border-color #227dbb
+		border-width 2px
+		border-style solid
+		line-height 39px
+	&--dark
+		background #090d15
+	&--blue
+		background #249def
+	&--gray
+		background #d9dfeb
+		color #b1bed4
+		&:hover
+			background #249def
+	&--red
+		background #f14927
+	&--long
+		padding 0 35px
+	&--expand
+		width 100%
+		padding-left 0
+		padding-right 0
+	&--filter
+		height 35px
+		line-height 35px
+	.indicator
+		margin-left 12px
+	&__icon
+		display inline-block
+		position relative
+		right 17px
+		width 35px
+		text-align center
+		height 100%
+		vertical-align top
+		background #1d2532
+		color #f34927
+		svg
+			position absolute
+			top 50%
+			left 50%
+			margin -7px 0 0 -7px
+	&--icon
+		.fa
+			margin-right 8px
+			font-size 21px
+			vertical-align middle
+		&-small
+			.fa
+				margin-right 8px
+				vertical-align middle
+			
+		
+.indicator
+	border 2px solid #f34927
+	background-color transparent
+	font-size 9px
+	text-align center
+	height 21px
+	line-height 17px
+	padding 0 7px
+	border-radius 15px
+	display inline-block
+	vertical-align middle
+	&--white
+		border-color #fff
+		
+.bookmark-button
+	border-radius 3px
+	border 1px solid #cbcedd
+	width 30px
+	height 30px
+	text-align center
+	padding 0
+	line-height 28px
+	background transparent
+	color #cbcedd
+	position absolute
+	// right 29px
+	right 0
+	top 50%
+	transition all .3s ease
+	margin-top -15px
+	&:hover
+		opacity .7
+			
+
+/*=====  End of buttons  ======*/
+
+
+
+.copyright
+	border-radius 3px
+	background-color #090d15
+	position absolute
+	display inline-block
+	left 30px
+	bottom 27px
+	padding 9px 17px
+	transition all .3s ease
+	&:hover
+		opacity .7
+	
+
+		
+	
+/*==============================
+=            modals            =
+==============================*/
+
+.modal-backdrop
+	background-color  rgba(2, 13, 32, 0.95)
+	
+.modal-backdrop
+	&.in
+		opacity 1
+
+.modal-dialog-wrapper
+	width 100%
+	white-space nowrap
+	margin 0
+	&:after
+		content ''
+		display inline-block
+		vertical-align middle
+		height 100%
+		width 0
+		
+.modal-dialog
+	display inline-block
+	vertical-align middle
+	white-space normal
+	width 100%
+	border-radius 3px
+	overflow hidden
+	background-color  #ffffff
+
+/*=====  End of modals  ======*/
+
+
+	
+/*=============================
+=            login            =
+=============================*/
+	
+
+.login-heading
+	background linear-gradient(rgba(36, 157, 239, 0.85), rgba(36, 157, 239, 0.85)), url('../img/bg/login-bg.jpg') 
+	height 216px
+	color #fff
+	font-size 16px
+	font-weight 300
+	position relative
+	&-wrapper
+		position absolute
+		bottom 23px
+		left 16px
+		width 100%
+	&__icon
+		margin-bottom 8px
+	&__title
+		font-weight 700
+		font-size 30px
+		text-transform uppercase
+		margin-bottom 8px
+		letter-spacing 1px
+	&__subtitle
+		font-family Roboto
+		margin-bottom 0
+.login-form
+	padding 21px 18px 20px
+	font-family Roboto
+	font-weight 300
+	&__input
+		margin-bottom 18px
+	&__links
+		margin-top 33px
+		a
+			display inline-block
+			vertical-align middle
+		.btn
+			margin-right 15px
+			padding 0 50px
+	
+/*=====  End of login  ======*/
+	
+
+/*=============================
+=       booking-modal        =
+=============================*/
+
+.booking-modal
+	position relative
+	padding 25px
+	color #0b1320
+	&__title
+		font-size 30px
+		font-weight bold
+		text-transform uppercase
+
+.booking-screen
+	position absolute
+	top 0
+	left 0
+	right 0
+	opacity 0
+	visibility hidden
+	transition opacity .3s ease, visibility 0s .3s ease
+	&.active
+		opacity 1
+		visibility visible
+		transition opacity .3s ease, visibility 0s ease
+	&-wrap
+		position relative
+	&-inner-wrap
+		margin 0 -25px
+		padding 22px 25px
+		background #eff3fa
+		
+	.filter
+		margin-bottom 35px
+		
+.booking-steps
+	padding 0
+	list-style-type none
+	margin-bottom 22px
+		
+
+.booking-step
+	border 2px solid #e0e0e0
+	border-radius 3px
+	text-transform uppercase
+	font-weight bold
+	cursor pointer
+	padding 13px 28% 13px 11px
+	transition all .3s ease
+	&.active
+		background #0f192b
+		color #fff
+		border-color #0f192b
+	&-wrap
+		float left
+		width 25%
+		padding-right 20px
+		&:last-of-type
+			padding-right 0
+	&__count
+		color #249def
+		float left
+	&__text
+		margin-bottom 0
+		margin-left 30px
+		
+.booking-details
+	&__title
+		font-size 20px
+		text-transform uppercase
+		font-weight bold
+		margin-bottom 10px
+	&-success
+		font-size 18px
+		&__desc
+			margin-bottom 30px
+		.booking-details__title
+			font-size 25px
+	&-social
+		padding 0
+		margin 0
+		&__item
+			display inline-block
+			vertical-align middle
+			margin-right 10px
+			img
+				border-radius 50%
+	&-time-row
+		padding 20px 0
+		text-transform uppercase
+		border-bottom 1px solid #e8e8e8
+		color #b9b9b9
+		font-size 11px
+		&__title
+			font-weight bold
+			font-size 13px
+			text-transform uppercase
+			width 100px
+			display inline-block
+			vertical-align middle
+			margin 0
+			color #0b1320
+		&__label
+				margin 0 14px 0 0
+				input[type="radio"]:checked
+					&+span
+						color #fff
+						background #249def
+						box-shadow 0px 1px 0px 0px rgba(21, 117, 181, 1)
+
+						
+			span
+				box-shadow 0px 1px 0px 0px rgba(224, 224, 224, 1)
+				font-size 11px
+				font-weight 400
+				padding 5px 13px
+				cursor pointer
+				border-radius 20px
+				color #0b1320
+				background #fff
+				transition all .3s ease
+			&:last-of-type
+				margin-right 0
+			input
+				display none
+	&-time
+		border-top 1px solid #e8e8e8
+		margin-top 25px
+	&__bottom
+		margin 25px 0 0 0
+		line-height 43px
+		
+.booking-status
+	font-family Roboto
+	font-weight 300
+	text-transform uppercase
+	&__title
+		font-weight 400
+	
+
+
+/*=====  End of booking-modal  ======*/
+
+/*=============================
+=           vacancy           =
+=============================*/
+.vacancy-view
+	padding-top 50px
+	color #fff
+	padding-bottom 50px
+	background url('../img/bg/vacancy.jpg') center center /cover no-repeat
+	&__logo
+		border-radius 5px
+		display inline-block
+		vertical-align middle
+		margin-right 28px
+	&__contact-item
+		display inline-block
+		vertical-align middle
+		margin-right 20px
+		p
+			text-transform uppercase
+			font-weight bold
+			font-size 13px
+		a
+			margin-right 20px
+
+
+/*=====  End of vacancy  ======*/
+
+/*=============================
+=            anchors          =
+=============================*/
+	.anchor
+		&--white
+			color #fff
+			&:hover
+			&:active
+			&:focus
+				color #fff
+		&--red
+			color #f14927
+			&:hover
+			&:active
+			&:focus
+				color #f14927
+
+
+/*=====  End of anchors  ======*/
+
+/*=============================
+=           pikadate           =
+=============================*/
+
+
+.pika
+	&-single
+		border none
+	&-lendar
+		float none
+		width auto
+		padding 0
+		margin 0
+		border-bottom 1px solid #e0e0e0
+	&-title
+		display none
+	&-table
+		font-family Roboto
+		border-radius 3px
+		overflow hidden
+		thead
+			background #0f192b
+			th
+				color #fff
+				font-size 13px
+				text-transform uppercase
+				font-weight 400
+				line-height 49px
+		td
+			&:first-of-type
+				.pika-button
+					color #249def !important
+	&-button
+		font-size 13px
+		color #132e46
+		text-align center
+		padding 10px 0
+		border 3px solid rgba(36, 157, 239, 0)
+		transition all .2s ease
+		&:hover
+			background none
+			color #132e46
+			border 3px solid rgba(36, 157, 239, .5)
+			border-radius 0
+.is-selected 
+	.pika-button
+		font-weight 400
+		background none
+		color #132e46
+		box-shadow none
+		border 3px solid rgba(36, 157, 239, 1)
+		border-radius 0
+		box-sizing border-box
+	&.is-today
+		.pika-button
+			font-weight bold
+	
+
+
+
+/*=====  End of pikadate  ======*/
+
+
+/*=============================
+=          mobile-menu        =
+=============================*/
+
+.mobile-menu-toggle
+	&--tablet
+		position absolute
+		left 41px
+		top 45px
+		padding 1px 7px
+		background #121925
+		color #249def
+		border-radius 3px
+		font-size 21px
+		border none
+		z-index 5
+
+.mobile-menu
+	position fixed
+	top 0
+	right 0
+	bottom 0
+	left 0
+	z-index 4
+	opacity 0
+	visibility hidden
+	transition opacity .3s ease, visibility 0s .3s ease, transform .3s ease
+	white-space nowrap
+	overflow-x hidden
+	overflow-y scroll
+	//pointer-events none
+	background rgba(9,13,21,.99)
+	smooth-scrolling(true)
+	&.active
+		opacity 1
+		//z-index 4
+		visibility visible
+		transition opacity .3s ease, visibility 0s ease, transform .3s ease
+	&:after
+		content ''
+		display inline-block
+		vertical-align middle
+		height 100%
+		width 0
+		
+		
+.mobile-menu-wrapper
+	display inline-block
+	vertical-align middle
+	text-align center
+	//pointer-events auto
+	width 100%
+	z-index 5
+	white-space normal
+	
+		
+.menu-item--mobile
+	line-height 61px
+	padding 0
+	margin 0
+	z-index 999
+	outline none !important
+	.menu-item__indicator
+		position static
+		margin 0 0 0 6px
+		display inline-block
+		vertical-align middle
+		
+/*=====  End of pikadate  ======*/
+
+/*=============================
+=         mobile header      =
+=============================*/
+.mobile-header
+	text-align center
+	background #121925
+	position fixed
+	top 0
+	line-height 58px
+	height 58px
+	left 0
+	width 100%
+	z-index 5
+	&__btn
+		background none
+		border none
+		box-sizing content-box
+		width 21px
+		color #249def
+		font-size 21px
+		opacity 0
+		padding 0
+		visibility hidden
+		transition opacity .3s ease, visibility 0s .3s ease
+		position absolute
+		float none !important
+		&:first-of-type
+			left 10px
+		&:last-of-type
+			right 10px
+		&.active
+			opacity 1
+			visibility visible
+			transition opacity .3s ease, visibility 0s ease
+		
+	.myworld
+		display inline-block
+		position static
+		border-color #fff
+		color #fff
+		line-height 1.42857143
+		text-decoration none !important
+	// .mobile-menu-toggle
+	// 	width 18px
+		
+
+/*=====  mobile header  ======*/
+
+/*=============================
+=            desktop          =
+=============================*/
+@media (min-width: 1200px)
+	.container
+		width 1230px
+		
+
+/*=============================
+=            tablets          =
+=============================*/	
+@media (max-width: 1199px)
+	.places
+		width 30%
+	.overview
+		width 54%
+		&--single
+			width 65%
+	.excursion-info-block
+		margin-right 10px
+		
+	.overview-heading__btns
+		float none
+		margin-top 15px
+		text-align left
+		button
+			margin-right 20px
+			
+	.place-view__buttons .btn
+		margin-right 5px
+		margin-bottom 21px
+		&:last-of-type
+			margin-right 0
+			
+	.menu-toggle--overview+.overview-header__title
+		margin-left 0
+		
+	.grid-item--big .grid-item-wrapper
+		margin-left 85px
+		
+	.countdown-flip
+		margin-right 0
+		
+	.event-view__info
+		padding-right 23px
+		
+	.instagram__item
+		width 90px
+		height 80px
+		padding-right 10px
+		&--icon
+			width 50px
+			position relative
+
+
+		
+	.vacancy-view__logo
+		margin-right 10px
+			
+	.social-stats
+		display block
+	
+	.tags + .social-stats
+		display inline-block
+
+	.btns-block__search-form
+		margin-left 215px
+		
+	.myworld
+		top 45px
+		left 81px
+		
+	.close-modal
+		position absolute
+		right 15px
+		top 15px
+		padding 15px
+		color #249def
+		background none
+		border none
+		font-size 19px
+		z-index 1
+		
+
+		
+	.chat-contact
+		display inline-block
+		vertical-align top
+		white-space normal
+		width 213px
+		margin-right -3px
+		border none
+		
+	.chat-contacts
+		white-space nowrap
+		
+	.chat-messages
+		smooth-scrolling(true)
+
+	.chat-window
+		top 0px
+		left -15px
+		right -15px
+		&.active
+			.chat-messages
+				z-index 999
+				position relative
+	
+		
+	.chat-input
+		margin-right 0
+		&__textarea
+			padding-right 40px
+		
+	.chat-input-textarea-wrapper
+		margin-right 0
+		position relative
+		&:after
+			content '\f1d8'
+			display inline-block
+			font-family FontAwesome
+			font-size 20px
+			color #249def
+			position absolute
+			right 10px
+			top 50%
+			transform translateY(-50%)
+	
+@media (max-width: 767px)
+
+	.place-menu
+		display none !important
+
+	.chat
+		&__header
+			margin 0 -30px
+			padding 0 10px 24px
+		
+	.chat-messages 
+		padding-left 10px
+		padding-right 10px
+		margin-right 0
+		
+	.chat-contact
+		padding 13px 10px
+			
+	.chat-input
+		padding-left 10px
+		padding-right 10px
+
+	.mobile-menu
+		top 58px
+		border-top 1px solid #090d15
+		transform translateX(-100%)
+		&.active
+			transform translateX(0)
+		
+	.pin
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+		color #f34927
+		font-size 32px
+		background none
+		border none
+		cursor pointer
+		
+	.overview
+		width 100%
+		padding 77px 10px 0
+		overflow-x hidden
+		
+	.place-view__buttons
+		left 10px
+		margin-bottom -21px
+		.btn
+			display inline-block
+			margin-bottom 21px
+		
+	.btns-block
+		.btn
+		&__search-form
+			width 100%
+			display block
+			float none !important
+			margin-left 0
+			&:last-child
+				margin-bottom 0
+		.btn + .btns-block__search-form
+			margin-top 35px
+		.btn
+			margin-bottom 20px
+			
+	.search-form__icon
+		right 0
+		
+		
+	.place-menu--fixed
+		right 10px
+		top 58px
+		
+	.grid-item--big .grid-item__desc
+		padding-right 0
+	
+	.tags
+		float none !important
+			
+	.tags
+	.social-stats
+		display block
+		
+	.tags + .social-stats
+		margin-top -5px
+		
+	.btns-block
+	.excursion__info
+	.circle-stat-wrap
+	.grid-item
+	.overview-block
+		padding-left 10px
+		padding-right 10px
+		
+	.overview-block
+		margin-left -10px
+		margin-right -10px
+		&--fluid
+			padding-left 0
+			padding-right 0
+		
+	.place-menu
+		margin-bottom 0
+		background #121925
+		list-style-type none
+	
+	.tags__item
+		margin-bottom 10px
+		
+	.price
+	.price-wrapper
+	.grid-item__date-right
+		float none !important
+		text-align left
+		margin 5px 0
+		
+	.grid-item__date-right
+		margin-top 8px
+
+	.excursion
+		height 250px
+		&-info-block
+			text-align center
+			display block
+			margin 0 0 10px 0
+			&:last-of-type
+				margin-bottom 0
+				
+	.overview-heading__btns
+		.btn
+			margin-bottom 21px
+			display block
+			&:last-child
+				margin-bottom 0
+				
+	.overview-header
+		.btn
+			float none !important
+			width 100%
+			margin-bottom 20px
+			&__icon
+				position absolute
+				right auto
+				left 0
+	
+	.news-view-datetime-wrapper
+		top 10px
+		left 10px
+		
+	.newsletter-form
+		input
+		button
+			display block
+			width 100%
+			margin-bottom 15px
+			&:last-child
+				margin-bottom 0
+				
+	.news-author__tags
+		margin-top 10px
+		
+	.instagram__item
+		margin-bottom 10px
+		
+	.share .share-social-list
+		margin-bottom 20px
+		
+	.vacancy-view
+		text-align center
+		&__logo
+			margin 0 0 10px 0
+		&__contact-item
+			margin 0
+			a
+				margin-right 0
+			
+	.contact-item
+		display block
+		&-wrapper
+			display block
+			margin-bottom 10px
+			&:last-of-type
+				margin-bottom 0
+				
+	.place-right-block
+		float none
+		margin 10px 0
+		padding-top 7px
+		
+	.place-lists
+		.btn
+			width 100%
+			
+	.user-view__info
+		left 10px
+			
+	.user-view-info
+		&__img
+			margin-right 5px
+		.btn
+			display block
+			margin 0 0 5px 0
+			
+	.modal-dialog-wrapper
+		width auto
+		margin 0 -15px
+		overflow hidden
+		overflow-y scroll
+		background #fff
+		smooth-scrolling(false)
+	
+	.modal-dialog
+		margin 0
+		border-radius 0
+		vertical-align top
+		
+	.booking-steps
+		white-space nowrap
+		overflow-x scroll
+		position relative
+		margin 0 -10px 22px
+		padding-left 10px
+		smooth-scrolling(false)
+		&__item
+			width 197px
+			white-space normal
+			
+	.booking-step-wrap
+		width auto
+		display inline-block
+		float none
+		&:last-of-type
+			margin-right 10px
+		
+	.booking-modal
+		padding 25px 10px
+		.calendar
+			margin 0 -10px 45px
+			
+	label
+		& > *
+			display block
+			pointer-events none
+
+
+	.close-modal
+		right 0
+		
+	.booking-details
+		&__bottom
+			float none !important
+			.btn
+				width 100%
+				display block
+				float none !important

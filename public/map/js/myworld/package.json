@@ -1,0 +1,19 @@
+{
+  "name": "myworld",
+  "version": "1.0.0",
+  "main": "src/myworld.source.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "pump": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zolotukhin",
+  "license": "ISC",
+  "description": ""
+}
